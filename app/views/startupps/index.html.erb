@@ -1,0 +1,46 @@
+<h1><%= pluralize(@startupps.size, "Startupp")%></h1>
+
+	<% @startupps.each do |startup| %>
+	 <article>
+    <header>
+      <h2><%= startup.title %></h2>
+    </header>
+    <p>
+      <%= truncate(startup.description, length: 40, separator: ' ') %>
+    </p>
+    <table>
+      <tr>
+        <th>Founders:</th>
+        <td><%= startup.founders %></td>
+      </tr>
+      <tr>
+        <th>Founding Date:</th>
+        <td><%= startup.founding_date %></td>
+      </tr>
+       <tr>
+        <th>Taglines:</th>
+        <td><%= startup.tagline %></td>
+      </tr>
+      <tr>
+        <th>Web URL:</th>
+        <td><%= startup.website_url %></td>
+      </tr>
+       <tr>
+        <th>Number of Employees:</th>
+        <td><%= startup.employees %></td>
+      </tr>
+       <tr>
+        <th>FaceBook:</th>
+        <td><%= startup.fb_url %></td>
+      </tr>
+       <tr>
+        <th>Twitter:</th>
+        <td><%= startup.twitter_url %></td>
+      </tr>
+       <tr>
+        <th>Linkedin:</th>
+        <td><%= startup.linkedin_url %></td>
+      </tr>
+    </table>
+  </article>
+	<% end %>
