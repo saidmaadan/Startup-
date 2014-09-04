@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   
   root "startupps#index"
-  get "startupps" => "startupps#index"
-  get "startupps/:id" => "startupps#show", as: "startupp"
+  # get "startupps" => "startupps#index"
+  # get "startupps/:id" => "startupps#show", as: "startupp"
+  # get "startupps/:id/edit" => "startupps#edit", as: "edit_startupp"
+  # patch "startupps/:id" => "startupps#update"
+  
+  resources :startupps
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

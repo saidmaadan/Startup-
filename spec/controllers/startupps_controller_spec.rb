@@ -52,7 +52,7 @@ end
 feature "Displaying link on listing page to the detail page" do 
 	it "show navigation from listing page to detail page" do 
 		startupp = Startupp.create(startupp_attributes)
-		
+
 		visit startupps_url
 
 		click_link startupp.title
@@ -62,4 +62,35 @@ feature "Displaying link on listing page to the detail page" do
 
 	end
 end
+
+feature "Edit individual startup listing" do 
+	it "edit and display the edited startup details" do
+		startupp = Startupp.create(startupp_attributes)
+
+		visit startupp_url(startupp)
+
+		click_link "Edit"
+
+		expect(current_path).to eq(edit_startupp_path(startupp))
+
+		expect(find_field('Title').value).to eq(startupp.title)
+
+	end
+end
+
+feature "Submit new Startup" do 
+	it "create, save new startup and display details" do
+
+		visit startupps_url
+
+		click_link "Submit Startup"
+
+		expect(current_path).to eq(new_startupp_path)
+
+		click_button "Create Startupp"
+
+		expect(current_path).to eq(startupp_path(Startupp.last))
+  end
+end
+
 # end
