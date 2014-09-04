@@ -1,45 +1,45 @@
 <h1><%= pluralize(@startupps.size, "Startupp")%></h1>
 
-	<% @startupps.each do |startup| %>
+	<% @startupps.each do |startupp| %>
 	 <article>
     <header>
-      <h2><%= startup.title %></h2>
+      <h2><%= link_to startupp.title, startupp_url(startupp) %></h2>
     </header>
     <p>
-      <%= truncate(startup.description, length: 40, separator: ' ') %>
+      <%= truncate(startupp.description, length: 40, separator: ' ') %>
     </p>
     <table>
       <tr>
         <th>Founders:</th>
-        <td><%= startup.founders %></td>
+        <td><%= startupp.founders %></td>
       </tr>
       <tr>
         <th>Founding Date:</th>
-        <td><%= startup.founding_date %></td>
+        <td><%= startupp.founding_date %></td>
       </tr>
        <tr>
         <th>Taglines:</th>
-        <td><%= startup.tagline %></td>
+        <td><%= startupp.tagline %></td>
       </tr>
       <tr>
         <th>Web URL:</th>
-        <td><%= startup.website_url %></td>
+        <td><%= startupp.website_url %></td>
       </tr>
        <tr>
         <th>Number of Employees:</th>
-        <td><%= startup.employees %></td>
+        <td><%= startupp.employees %></td>
       </tr>
        <tr>
         <th>FaceBook:</th>
-        <td><%= startup.fb_url %></td>
+        <td><%= startupp.fb_url %></td>
       </tr>
        <tr>
         <th>Twitter:</th>
-        <td><%= startup.twitter_url %></td>
+        <td><%= startupp.twitter_url %></td>
       </tr>
        <tr>
         <th>Linkedin:</th>
-        <td><%= startup.linkedin_url %></td>
+        <td><%= startupp.linkedin_url %></td>
       </tr>
     </table>
   </article>

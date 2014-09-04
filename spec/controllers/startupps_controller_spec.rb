@@ -35,4 +35,31 @@ require 'rails_helper'
 		end
 	end
 
+	feature "Displaying link on detail page back to listing page" do 
+	it "show navigation from detail page to listing page" do 
+		startupp = Startupp.create(startupp_attributes)
+
+		visit startupp_url(startupp)
+
+		click_link 'All Startupps'
+
+		expect(current_path).to eq(startupps_path)
+		
+
+	end
+end
+
+feature "Displaying link on listing page to the detail page" do 
+	it "show navigation from listing page to detail page" do 
+		startupp = Startupp.create(startupp_attributes)
+		
+		visit startupps_url
+
+		click_link startupp.title
+
+		expect(current_path).to eq(startupp_path(startupp))
+		
+
+	end
+end
 # end
