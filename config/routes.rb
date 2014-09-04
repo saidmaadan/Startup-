@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  
+  root "startupps#index"
   get "startupps" => "startupps#index"
   get "startupps/:id" => "startupps#show", as: "startupp"
   # The priority is based upon order of creation: first created -> highest priority.
