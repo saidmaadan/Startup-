@@ -6,7 +6,13 @@
     <p>
       <%= @startupp.description %>
     </p>
+    </div>
     <table>
+    <tr>
+        <th></th>
+        <td><%= image_for(@startupp) %>
+        <%#= image_tag @startupp.screenshot.url(:medium) %></td>
+      </tr>
       <tr>
         <th>Founders:</th>
         <td><%= @startupp.founders %></td>

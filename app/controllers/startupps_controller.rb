@@ -40,6 +40,6 @@ class StartuppsController < ApplicationController
 		startupp_params = params.require(:startupp).
        permit(:title, :description, :founders, :founding_date, :tagline, :category, :website_url,
        :tags, :status, :employees, :award, :contact_email, :contact_address,
-       :fb_url, :twitter_url, :Linkedin_url)
+       :fb_url, :twitter_url, :Linkedin_url, :screenshot)
   end
 end
