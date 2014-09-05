@@ -28,6 +28,12 @@ class StartuppsController < ApplicationController
 		redirect_to @startupp
 	end
 
+	def destroy
+		@startupp = Startupp.find(params[:id])
+		@startupp.destroy
+		redirect_to startupps_url
+	end
+
 	private
 
 	def startupp_params

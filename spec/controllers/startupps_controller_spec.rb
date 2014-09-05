@@ -93,4 +93,17 @@ feature "Submit new Startup" do
   end
 end
 
+feature "Delete Startup post" do
+	it "delete a startup post and redirect to listing page" do
+		startupp = Startupp.create(startupp_attributes)
+
+		visit startupp_path(startupp)
+
+		click_link "Delete"
+
+		expect(current_path).to eq(startupps_path)
+		expect(page).not_to have_text(startupp.title)
+	end
+end
+
 # end
