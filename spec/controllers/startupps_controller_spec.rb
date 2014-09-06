@@ -104,6 +104,26 @@ feature "Delete Startup post" do
 		expect(current_path).to eq(startupps_path)
 		expect(page).not_to have_text(startupp.title)
 	end
+
+	it "has many reviews" do
+  startupp = Startupp.new(startupp_attributes)
+
+  review1 = startupp.reviews.new(review_attributes)
+  review2 = startupp.reviews.new(review_attributes)
+
+  expect(startupp.reviews).to include(review1)
+  expect(startupp.reviews).to include(review2)
+end
+
+it "removess related reviews" do
+  startupp = Startupp.create(startupp_attributes)
+
+  startupp.reviews.create(review_attributes)
+
+  expect { 
+    startupp.destroy
+  }.to change(Review, :count).by(-1)
+end
 end
 
 # end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :reviews
+
   root "startupps#index"
   # get "startupps" => "startupps#index"
   # get "startupps/:id" => "startupps#show", as: "startupp"

@@ -6,5 +6,13 @@ def startupp_attributes(overrides= {})
         fb_url: 'https://facebook.com/job-inbox', twitter_url: 'https://twitter.com/job-inbox',
         linkedin_url:'https://linkedin.com/in/job-inbox'
 
-	}
+	}.merge(overrides)
+end
+
+def review_attributes(overrides = {})
+	{
+		name: "Danny Glover",
+		ratings: 6,
+		comment: "I can wait to check on this"
+	}.merge(overrides)
 end
