@@ -1,21 +1,24 @@
+<div class='row'><br>
 <%= form_for @startupp, :html => { :multipart => true} do |f| %>
-<p><%= f.label :title %>:<%= f.text_field :title %></p>
-<p><%= f.label :description %>:<%= f.text_area :description, cols: 50, rows: 7 %></p>
-<p><%= f.label :founders %>:<%= f.text_field :founders %></p>
-<p><%= f.label :founding_date %>:<%= f.date_field :founding_date %></p>
-<p><%= f.label :tagline %>:<%= f.text_field :tagline %></p>
-<p><%= f.label :category %>:<%= f.text_field :category %></p>
-<p><%= f.label :website_url %>:<%= f.text_field :website_url %></p>
-<p><%= f.label :tags %>:<%= f.text_field :tags %></p>
-<p><%= f.label :status %>:<%= f.text_field :status %></p>
-<p><%= f.label :employees %>:<%= f.number_field :employees %></p>
-<p><%= f.label :award %>:<%= f.text_field :award %></p>
-<p><%= f.label :contact_email %>:<%= f.text_field :contact_email %></p>
-<p><%= f.label :contact_address %>:<%= f.text_field :contact_address %></p>
-<p><%= f.label :fb_url %>:<%= f.text_field :fb_url %></p>
-<p><%= f.label :twitter_url %>:<%= f.text_field :twitter_url %></p>
-<p><%= f.label :linkedin_url %>:<%= f.text_field :linkedin_url %></p>
-<p><%= f.label :screenshot %>:<%= f.file_field :screenshot %></p>
+<%= render "shared/errors", object: @startupp %>
+
+<p><%= f.label :title %><%= f.text_field :title %></p>
+<p><%= f.label :description %><%= f.text_area :description, cols: 50, rows: 7 %></p>
+<p><%= f.label :founders %><%= f.text_field :founders %></p>
+<p><%= f.label :founding_date %><%= f.date_field :founding_date %></p>
+<p><%= f.label :tagline %><%= f.text_field :tagline %></p>
+<p><%= f.label :category %><%= f.text_field :category %></p>
+<p><%= f.label :website_url %><%= f.text_field :website_url %></p>
+<p><%= f.label :tags %><%= f.text_field :tags %></p>
+<p><%= f.label :status %><%= f.text_field :status %></p>
+<p><%= f.label :employees %><%= f.number_field :employees %></p>
+<p><%= f.label :award %><%= f.text_field :award %></p>
+<p><%= f.label :contact_email %><%= f.text_field :contact_email %></p>
+<p><%= f.label :contact_address %><%= f.text_field :contact_address %></p>
+<p><%= f.label :fb_url %><%= f.text_field :fb_url %></p>
+<p><%= f.label :twitter_url %><%= f.text_field :twitter_url %></p>
+<p><%= f.label :linkedin_url %><%= f.text_field :linkedin_url %></p>
+<p><%= f.label :screenshot %><%= f.file_field :screenshot %></p>
 
 <p><%= f.submit %> | <%= link_to 'Cancel', startupps_path %></p>
-	<% end %>
+	<% end %></div>

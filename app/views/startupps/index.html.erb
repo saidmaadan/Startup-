@@ -1,12 +1,13 @@
+<div class='row'>
 <h2><%= link_to 'Submit Startup', new_startupp_path %></h2>
 
 <h1><%= pluralize(@startupps.size, "Startupp")%></h1>
 
 	<% @startupps.each do |startupp| %>
-	 <article>
+	 
     <header>
    <%= image_f(startupp) %>
-    <%#= image_tag startupp.screenshot.url(:small) %></div>
+    <%#= image_tag startupp.screenshot.url(:small) %>
       <h2><%= link_to startupp.title, startupp_url(startupp) %></h2>
     </header>
     <p>
@@ -47,4 +48,4 @@
       </tr>
     </table>
   </article> -->
-	<% end %>
+	<% end %></div>

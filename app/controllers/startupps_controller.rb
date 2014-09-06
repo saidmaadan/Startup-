@@ -14,8 +14,11 @@ class StartuppsController < ApplicationController
 
 	def update
 		@startupp = Startupp.find(params[:id])
-		@startupp.update(startupp_params)
-		redirect_to @startupp
+		if @startupp.update(startupp_params)
+		  redirect_to @startupp, notice: "Startup successfully updated"
+		else
+		 	render :edit
+		 end
 	end
 
 	def new
@@ -24,14 +27,17 @@ class StartuppsController < ApplicationController
 
 	def create
 		@startupp = Startupp.new(startupp_params)
-		@startupp.save
-		redirect_to @startupp
+		if @startupp.save
+		  redirect_to @startupp, notice: "Startup successfully created"
+		else
+			render :new
+		end
 	end
 
 	def destroy
 		@startupp = Startupp.find(params[:id])
 		@startupp.destroy
-		redirect_to startupps_url
+		redirect_to startupps_url, alert: "Startup successfully deleted"
 	end
 
 	private

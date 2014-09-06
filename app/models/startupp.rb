@@ -16,4 +16,10 @@ class Startupp < ActiveRecord::Base
         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   end
+
+  validates :title, :founders, presence: true
+  validates :description, length: { minimum: 26 }
+  validates :employees, numericality: { greater_than_or_equal_to: 1 }
+  validates :screenshot, format: { with: /\w+\.(gif|jpg|jpeg|png)\z/i, 
+            message: "Only GIF, JPG, JPEG, PNG" }
 end
