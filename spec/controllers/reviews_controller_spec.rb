@@ -61,5 +61,47 @@ feature "Review" do
       expect(review.errors[:ratings].first).to eq("rate between 1 to 9")
     end
   end
+
+  it "shows indifidual startup reviews" do
+    startupp1 = Startupp.create(startupp_attributes(title: "Job Board"))
+    review1 = startupp1.reviews.create(review_attributes(name: "Danny Glover"))
+    
+    visit startupp_reviews_url(startupp1)
+        
+    expect(page).to have_text(review1.name)
+  end
 end
+
+feature "Create a new review" do 
+  it "saves the review" do    
+    startupp = Startupp.create(startupp_attributes)
+
+    visit startupp_url(startupp)
+    
+    click_link 'Write Review'
+    
+    expect(current_path).to eq(new_startupp_review_path(startupp))
+    
+    fill_in "Name", with: "Danny Glover"
+    choose "review_ratings_3"
+    fill_in "Comment", with: "I can wait to check on this"
+            
+    click_button 'Post Review'
+  
+    expect(current_path).to eq(startupp_reviews_path(startupp))
+  end
+  
+  it "reject invalid review" do
+    startupp = Startupp.create(startupp_attributes)
+    
+    visit new_startupp_review_url(startupp)
+    
+    expect { 
+      click_button 'Post Review' 
+    }.not_to change(Review, :count)
+        
+    expect(page).to have_text('error')
+  end
+end
+
 

@@ -16,4 +16,13 @@ module StartuppsHelper
 			image_tag startupp.screenshot.url(:small)
 		end
 	end
+
+	def format_average_ratings(startupp)
+	  if startupp.average_ratings.nil?
+	    content_tag(:strong, 'No reviews')
+	  else
+	  	content_tag(:color, "*" * startupp.average_ratings.round)
+	    #pluralize(number_with_precision(startupp.average_ratings, :precision => 1) , 'rating')
+	  end
+	end
 end

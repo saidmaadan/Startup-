@@ -1,4 +1,5 @@
 class StartuppsController < ApplicationController
+	# before_action :set_startupp
 
 	def index
 		@startupps = Startupp.all 
@@ -48,4 +49,9 @@ class StartuppsController < ApplicationController
        :tags, :status, :employees, :award, :contact_email, :contact_address,
        :fb_url, :twitter_url, :Linkedin_url, :screenshot)
   end
+
+ #  def set_startupp
+	# 	@startupp = Startupp.find(params[:id])
+	# end
+
 end

@@ -3,8 +3,8 @@ class Startupp < ActiveRecord::Base
 	validates :title, :founders, presence: true
   validates :description, length: { minimum: 26 }
   validates :employees, numericality: { greater_than_or_equal_to: 1 }
-  validates :screenshot, format: { with: /\w+\.(gif|jpg|jpeg|png)\z/i, 
-            message: "Only GIF, JPG, JPEG, PNG" }
+  # validates :screenshot, format: { with: /\w+\.(gif|jpg|jpeg|png)\z/i, 
+  #           message: "Only GIF, JPG, JPEG, PNG" }
 
   has_many :reviews, dependent: :destroy
 
@@ -25,5 +25,11 @@ class Startupp < ActiveRecord::Base
     }
   end
 
-  
+  def average_ratings
+  	reviews.average(:ratings)
+  end
+
+  def recent_reviews
+		reviews.order("created_at desc").limit(2)
+	end
 end

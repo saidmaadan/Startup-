@@ -1,0 +1,15 @@
+
+  <h1>Reviews for <%= link_to(@startupp.title, @startupp) %></h1>
+<ol>
+  <% @reviews.each do |review| %>
+    <li>
+      <p>
+        <%= pluralize(review.ratings, 'r') %> by <%= review.name %>:
+      </p> 
+      <p>
+        <%= review.comment %>
+      </p>
+    </li>
+    <%= time_ago_in_words(review.created_at) %> ago
+  <% end %>
+</ol>

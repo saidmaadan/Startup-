@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :reviews
+  
 
   root "startupps#index"
   # get "startupps" => "startupps#index"
@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # get "startupps/:id/edit" => "startupps#edit", as: "edit_startupp"
   # patch "startupps/:id" => "startupps#update"
   
-  resources :startupps
+  resources :startupps do 
+    resources :reviews
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

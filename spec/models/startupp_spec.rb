@@ -81,4 +81,15 @@ feature "Validations" do
 	  expect(current_path).to eq(startupps_path)   
 	  expect(page).to have_text('error')
 	end
+
+	it "has average number of review ratings" do 
+		startupp = Startupp.create(startupp_attributes)
+
+		startupp.reviews.create(review_attributes(ratings: 5))
+		startupp.reviews.create(review_attributes(ratings: 4))
+		startupp.reviews.create(review_attributes(ratings: 8))
+		startupp.reviews.create(review_attributes(ratings: 3))
+
+		expect(startupp.average_ratings).to eq(5)
+	end
 end
