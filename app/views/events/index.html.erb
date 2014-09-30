@@ -1,0 +1,16 @@
+<div class='row'>
+<h2><%= link_to 'Add New Event', new_event_path %>
+<%= pluralize(@events.size, "Event") %></h2>
+
+<% @events.each do |event| %>
+<h3><%= link_to event.event_title, event %></h3>
+<p><%= image_tag event.image_logo.url(:medium) %></p>
+<p><%= truncate(event.description, length: 35, separator: '') %></p>
+<p><%= event.location %></p>
+<p><%= event.city %></p>
+<p><%= event.state %></p>
+<p><%= event.starts %></p>
+<p><%= format_ticket(event) %></p>
+<p><%= event.organizer_name %></p>
+<% end %>
+</div>

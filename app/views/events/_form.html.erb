@@ -1,0 +1,91 @@
+<div class='row'>
+<%= form_for @event, :html => { :multipart => true } do |f| %>
+
+<%= render "shared/errors", object: @event %>
+<p>
+    <%= f.label :event_title %><br/>
+    <%= f.text_field :event_title %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :location %><br/>
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br/>
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br/>
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br/>
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zip %><br/>
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :starts %><br/>
+    <%= f.datetime_select :starts %>
+  </p>
+  <p>
+    <%= f.label :starts_time %><br/>
+    <%= f.text_field :starts_time %>
+  </p>
+  <p>
+    <%= f.label :ends %><br/>
+    <%= f.datetime_select :ends %>
+  </p>
+  <p>
+    <%= f.label :ends_time %><br/>
+    <%= f.text_field :ends_time %>
+  </p>
+  <p>
+    <%= f.label :organizer_name %><br/>
+    <%= f.text_field :organizer_name %>
+  </p>
+  <p>
+    <%= f.label :about_organizer %><br/>
+    <%= f.text_field :about_organizer %>
+  </p>
+  <p>
+    <%= f.label :facebook_link %><br/>
+    <%= f.text_field :facebook_link %>
+  </p>
+  <p>
+    <%= f.label :twitter_link %><br/>
+    <%= f.text_field :twitter_link %>
+  </p>
+  <p>
+    <%= f.label :linkedin_link %><br/>
+    <%= f.text_field :linkedin_link %>
+  </p>
+  <p>
+    <%= f.label :event_type %><br/>
+    <%= f.text_field :event_type %>
+  </p>
+  <p>
+    <%= f.label :event_subject %><br/>
+    <%= f.text_field :event_subject %>
+  </p>
+  <p>
+    <%= f.label :ticket %><br/>
+    <%= f.number_field :ticket, size: 6 %>
+  </p>
+  <p><%= f.label :image_logo %><%= f.file_field :image_logo %></p>
+  <p>
+    <%= f.submit %> | <%= link_to 'Cancel', events_path %>
+  </p>
+
+<% end %>
+</div>

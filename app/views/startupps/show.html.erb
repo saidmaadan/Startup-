@@ -87,5 +87,10 @@
     
     <%= link_to "Write Review", new_startupp_review_path(@startupp) %> | 
     <%= link_to 'Edit', edit_startupp_path(@startupp) %> | <%= link_to 'Delete', startupp_path(@startupp), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
-  </article></div>
+    
+    <%= render partial: 'reviews/form' %>
+  
+   <%= render partial: 'startupps/review', collection: @startupp.reviews %>
+</article>
+  </div>
 	

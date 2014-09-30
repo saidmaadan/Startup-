@@ -16,3 +16,16 @@ def review_attributes(overrides = {})
 		comment: "I can wait to check on this"
 	}.merge(overrides)
 end
+
+def event_attributes(overrides = {})
+  {
+    event_title: "Building Your LinkedIn Profile",
+	  location: "Capitol",
+	  city: "Austin",
+	  state: "Texas",
+	  ticket: 20.00,
+	  description: 'Learn tips from social media guru, Elizabeth Quintanilla, MBA, on how to improve your LinkedIn profile.  The session will be hands on so please bring your own device to access your profile during the session.',
+	  starts: 10.days.from_now,
+	  organizer_name: "Said Maadan"
+  }.merge(overrides)
+end

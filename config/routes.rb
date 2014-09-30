@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
 
   root "startupps#index"
+  resources :events
   # get "startupps" => "startupps#index"
   # get "startupps/:id" => "startupps#show", as: "startupp"
   # get "startupps/:id/edit" => "startupps#edit", as: "edit_startupp"
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   resources :startupps do 
     resources :reviews
   end
+
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

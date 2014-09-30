@@ -5,8 +5,14 @@ class StartuppsController < ApplicationController
 		@startupps = Startupp.all 
 	end
 
+	def new
+		@startupp = Startupp.new
+	end
+
 	def show
 		@startupp = Startupp.find(params[:id])
+		@review = Review.new
+		@review.startupp_id = @startupp_id
 	end
 
 	def edit
@@ -20,10 +26,6 @@ class StartuppsController < ApplicationController
 		else
 		 	render :edit
 		 end
-	end
-
-	def new
-		@startupp = Startupp.new
 	end
 
 	def create
@@ -49,6 +51,8 @@ class StartuppsController < ApplicationController
        :tags, :status, :employees, :award, :contact_email, :contact_address,
        :fb_url, :twitter_url, :Linkedin_url, :screenshot)
   end
+
+	
 
  #  def set_startupp
 	# 	@startupp = Startupp.find(params[:id])

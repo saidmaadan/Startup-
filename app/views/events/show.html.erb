@@ -1,0 +1,21 @@
+<div class='row'>
+<p><%= image_tag @event.image_logo.url(:medium) %></p>
+<p><%= @event.event_title %></p>
+<p><%= @event.description %></p>
+<p><%= @event.location %></p>
+<p><%= @event.address1 %></p>
+<p><%= @event.address2 %></p>
+<p><%= @event.city %></p>
+<p><%= @event.state %></p>
+<p><%= @event.starts %></p>
+ <p><%= format_ticket(@event) %></p>
+ <p><%= @event.organizer_name %></p>
+ <p><%= @event.about_organizer %></p>
+ <p><%= @event.facebook_link %></p>
+ <p><%= @event.twitter_link %></p>
+
+
+<%= link_to "All Events", events_path %>
+<%= link_to "Edit", edit_event_path(@event) %>
+<%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
+</div>

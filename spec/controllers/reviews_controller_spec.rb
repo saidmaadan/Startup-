@@ -62,7 +62,7 @@ feature "Review" do
     end
   end
 
-  it "shows indifidual startup reviews" do
+  it "shows individual startup reviews" do
     startupp1 = Startupp.create(startupp_attributes(title: "Job Board"))
     review1 = startupp1.reviews.create(review_attributes(name: "Danny Glover"))
     

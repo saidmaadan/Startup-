@@ -47,6 +47,13 @@ gem 'aws-sdk'
 gem 'figaro'
 gem 'social-share-button', '~> 0.1.6'
 gem 'kaminari'
+# gem 'searchkick'
+# gem 'slim-rails'
+
+# gem 'puma'
+# gem 'shelly-dependencies'
+
+# gem 'openlibrary'
 
 gem 'font-awesome-sass'
 # Use ActiveModel has_secure_password
