@@ -1,5 +1,6 @@
 class StartuppsController < ApplicationController
 	# before_action :set_startupp
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@startupps = Startupp.all 

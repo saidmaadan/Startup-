@@ -28,6 +28,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'spring',        group: :development
 
 gem "foundation-rails"
+gem "devise"
+gem "domp"
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem 'omniauth-linkedin-oauth2'
 
 group :development do
 	gem "rails_layout"	
@@ -68,3 +74,5 @@ gem 'font-awesome-sass'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem "omniauth-linkedin"

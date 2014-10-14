@@ -1,1 +1,15 @@
 <%# add navigation links to this file %>
+<li> <%= link_to "Events", events_path %></li>
+    <li> <%= link_to "Startups", startupps_path %></li>
+
+     <ul class="right">
+      <li class="active"><%= link_to 'Submit Startup', new_startupp_path %></li>
+      <li class="active"><%= link_to 'Add Event', new_event_path %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.email, edit_user_registration_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to "Signin", new_user_session_path %></li>
+      <li><%= link_to "Signup", new_user_registration_path %></li>
+      <% end %>
+      </ul>
